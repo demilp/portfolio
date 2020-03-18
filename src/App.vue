@@ -46,20 +46,6 @@
       </div>
     </nav>
     <router-view />
-    <!--     <footer class="footer">
-      <div class="content has-text-centered">
-        <p>
-          Built by Mark Johnson with Vue.js, Bulma, and Airtable.
-        </p>
-        <p>
-          Want to see how this site was built?
-          <a
-            href="https://dev.to/markjohnson303/building-a-portfolio-site-with-vue-bulma-and-airtable-5a58"
-            >Check out my tutorial on dev.to!</a
-          >
-        </p>
-      </div>
-    </footer> -->
   </div>
 </template>
 
@@ -80,14 +66,7 @@ export default {
   overflow: hidden;
   display: block;
   position: relative;
-  /* padding-bottom: 210px;  */
-  /* height of your footer */
 }
-/* footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-} */
 </style>
 
 <style lang="sass">
@@ -97,7 +76,7 @@ $primary: #72b5db
 
 .hero-home
   @extend .hero
-  background-image: url('./assets/cloud-background.png')
+  background-image: url('./assets/cloud-background.jpeg')
   background-size: cover
 
 

@@ -2,10 +2,13 @@
   <div>
     <section class="hero is-medium is-primary is-bold">
       <div class="hero-body">
-        <div class="container">
+        <div class="container about">
           <h1 class="title is-2">
             Meet Demián
           </h1>
+          <figure class="image is-256x256" style="max-width: 256px;">
+            <img class="is-rounded" src="../assets/profile.jpeg" />
+          </figure>
         </div>
       </div>
     </section>
@@ -180,12 +183,22 @@
   </div>
 </template>
 
-<style type="text/css">
+<style type="text/css" scoped>
 .box {
   height: 100%;
 }
 .tech-box-title {
   margin-top: 1.5rem;
+}
+.container.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .container.about {
+    flex-direction: column;
+  }
 }
 </style>
 
