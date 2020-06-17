@@ -9,17 +9,14 @@
         </div>
       </div>
     </section>
-    <section class="section">
-      <div class="container is-fluid">
-        <div class="columns is-multiline">
-          <div
-            class="column is-one-fifth"
-            v-for="(project, i) in projects"
-            :key="i"
-          >
-            <post-card v-bind="project"></post-card>
-          </div>
-        </div>
+    <section v-masonry>
+      <div
+        v-masonry-tile
+        class="is-one-fifth post"
+        v-for="(project, i) in projects"
+        :key="i"
+      >
+        <post-card v-bind="project"></post-card>
       </div>
     </section>
   </div>
@@ -33,11 +30,11 @@ import PostCard from "@/components/PostCard";
 export default {
   name: "projects",
   components: {
-    PostCard
+    PostCard,
   },
   data() {
     return {
-      airtableResponse: []
+      airtableResponse: [],
     };
   },
   mounted: function() {
@@ -56,7 +53,6 @@ export default {
   computed: {
     projects() {
       let self = this;
-      debugger
       let projectList = [];
       for (var i = 0; i < self.airtableResponse.length; i++) {
         if (self.airtableResponse[i].fields.Published) {
@@ -67,13 +63,20 @@ export default {
             image: self.airtableResponse[i].fields.Image
               ? self.airtableResponse[i].fields.Image[0].url
               : "",
-            slug: self.airtableResponse[i].fields.slug
+            slug: self.airtableResponse[i].fields.slug,
           };
           projectList.push(project);
         }
       }
       return projectList;
-    }
-  }
+    },
+  },
 };
 </script>
+<style scoped>
+.post {
+  width: 20%;
+  box-sizing: border-box;
+  padding: 1vw;
+}
+</style>
